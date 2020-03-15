@@ -12,7 +12,7 @@ else
 echo "文件夹已经存在"
 fi
  
-yum install -y wget 
+#yum install -y wget 
  
 #install node11.0
 cd $SOFT_PATH
@@ -25,23 +25,23 @@ make
 make install
 NODE_HOME=`pwd`
 
-#install maven3.2.3
+#install maven3.2.5
 cd $SOFT_PATH
-wget https://archive.apache.org/dist/maven/maven-3/3.2.3/binaries/apache-maven-3.2.3-bin.tar.gz
-tar -zxvf apache-maven-3.2.3-bin.tar.gz -C $SOFT_PATH
-mv apache-maven-3.2.3 maven-3.2.3
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
+tar -zxvf apache-maven-3.2.5-bin.tar.gz -C $SOFT_PATH
+mv apache-maven-3.2.5 maven-3.2.5
 cd maven*
 MAVEN_HOME=`pwd`
  
 #install git 2.8.0
-cd $SOFT_PATH
-yum -y install zlib-devel openssl-devel cpio expat-devel gettext-devel curl-devel perl-ExtUtils-CBuilder perl-ExtUtils- MakeMaker
-wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.8.0.tar.gz
-tar -zxvf git-2.8.0.tar.gz -C $SOFT_PATH
-cd git*
-./configure
-make install
-ln -s /usr/local/bin/git /usr/bin/git
+# cd $SOFT_PATH
+# yum -y install zlib-devel openssl-devel cpio expat-devel gettext-devel curl-devel perl-ExtUtils-CBuilder perl-ExtUtils- MakeMaker
+# wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.8.0.tar.gz
+# tar -zxvf git-2.8.0.tar.gz -C $SOFT_PATH
+# cd git*
+# ./configure
+# make install
+# ln -s /usr/local/bin/git /usr/bin/git
  
 #追加环境变量
 echo "export NODE_HOME=${NODE_HOME}" >> /etc/profile
